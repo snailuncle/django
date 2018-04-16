@@ -1,4 +1,4 @@
-"""mysite URL Configuration
+"""myblog URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.0/topics/http/urls/
@@ -15,13 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-print('*'*33)
-print('mysite_urls.py')
-#在mysite项目目录下
-#http收到请求先访问,项目目录中的urls
-#从上到下依次匹配
-#首先访问mysite文件夹下的polls目录,他导入了polls目录下的urls模块,现在转到polls.urls模块,发送给polls.urls的部分是polls/之后的字符
+from blog import views
+
 urlpatterns = [
-    path('polls/',include('polls.urls')),
     path('admin/', admin.site.urls),
+    path('blog/', include('blog.urls',namespace='blog')),
 ]

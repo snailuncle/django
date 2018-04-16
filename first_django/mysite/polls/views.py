@@ -6,12 +6,17 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
 from django.views import generic
 from django.utils import timezone
+print('*'*33)
+print('polls_views.py')
 
 class IndexView(generic.ListView):
+    print("class IndexView(generic.ListView):")
     template_name = 'polls/index.html'
     context_object_name = 'latest_question_list'
 
     def get_queryset(self):
+        print("class IndexView(generic.ListView):\n\tdef get_queryset(self):")
+        
         """
         Return the last five published questions (not including those set to be
         published in the future).

@@ -1,0 +1,25 @@
+<!-- from django.contrib import messages -->
+
+<!-- #向此模板中传入参数 {'articles':articles} -->
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>second_django</title>
+</head>
+<body>
+
+    <!-- <h1>{{ article.title }}</h1>
+    <h3>{{article.content}}</h3> -->
+    <h1><a href="{%url 'blog:edit_page' 0%}">新文章</a></h1>
+    <!-- <script>alert({{article.id}});</script> -->
+    {%for article in articles%}
+    <br/>
+    <!--  url关键字  应用程序:视图函数  传给视图函数的参数  -->
+    <a href="{%url 'blog:article_page' article.id%}">{{article.title}}</a>
+    <!-- <a href="{%url 'blog:article_page' article.id%}">{{article.title}}</a> -->
+    <br/>
+    {%endfor%}
+</body>
+</html>

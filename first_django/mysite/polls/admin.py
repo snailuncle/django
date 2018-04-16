@@ -2,7 +2,8 @@ from django.contrib import admin
 
 from .models import Question,Choice
 # Register your models here.
-
+print('*'*33)
+print('polls_admin.py')
 class ChoiceInline(admin.TabularInline):
     model = Choice
     extra = 3
