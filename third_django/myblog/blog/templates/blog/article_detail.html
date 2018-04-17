@@ -1,0 +1,26 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1><a href="{%url 'blog:edit_page' article.id%}">修改此文</a></h1>
+
+    <br/>
+    <h5>第{{article.id}}篇文章</h5>
+    <br/>
+    <br/>
+    <h1>标题<br/>{{article.title}}
+    </h1>
+    <br/>
+    <br/>
+    <h3>内容<br/>{{article.content}}</h3>
+    <br/>
+
+</body>
+
+</html>

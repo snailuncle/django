@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- #显示数据库中的数据 -->
+    {%for article in articles%}
+    <br/>
+    <!-- 点击文章标题,进入文章详情页 -->
+    <a href="{%url 'blog:article_detail' article.id%}">{{article.id}}  {{article.title}}</a>
+    <!-- {{article.id}}
+    
+    {{article.content}} -->
+    <br/>
+
+
+
+
+    {%endfor%}
+
+        <h1>新建文章: 这个只是文字,不是链接</h1>
+    
+                <!-- url关键字说明这是一个链接 -->
+                <!-- blog应用名称 -->
+                <!-- edit_page视图函数 -->
+                <!-- 必须用单引号引起来 -->
+    <!-- 从这个发出去一个链接
+    Request URL: http://localhost:8000/blog/edit/ -->
+    <h1><a href="{%url 'blog:edit_page' 0%}">新建文章链接</a></h1>
+    
+</body>
+</html>

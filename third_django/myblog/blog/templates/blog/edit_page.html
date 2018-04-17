@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>新建或修改文章页面</title>
+</head>
+<body>
+    <h1>新建或修改文章页面{{article_id}}</h1>
+
+    <!-- 一个文章标题
+    一个文章内容 -->
+    <form action="{%url 'blog:edit_submit_result'%}" method='post'>
+        {%csrf_token%}       
+        <input type='hidden' name='article_id' value="{{article.id | default:'0'}}" />
+        <label>文章标题
+            <input type="text" name='title' value="{{article.title | default:'title'}}" />
+        </label>
+        <br/><br/>
+        <label>文章内容
+            <input type="text" name='content' value="{{article.content | default:'content'}}" />
+        </label>
+        <br/><br/>
+        <input type="submit" value='发送提交' />
+    </form>
+
+
+
+
+
+
+
+</body>
+</html>
