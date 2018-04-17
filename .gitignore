@@ -4,3 +4,4 @@
 *.ts
 *.jpg
 testvir/
+!virtualenv.txt
