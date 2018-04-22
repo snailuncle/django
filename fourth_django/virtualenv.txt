@@ -1,2 +1,15 @@
 pip install virtualenv
 virtualenv testvir  
+explorer path
+pip install virtualenvwrapper-win
+mkvirtualenv testvir2
+
+$ mkvirtualenv testvir2
+ C:\Users\Administrator\Envs is not a directory, creating
+Using base prefix 'd:\\anaconda'
+New python executable in C:\Users\Administrator\Envs\testvir2\Scripts\python.exe
+b'C:\\Users\\Administrator\\Envs\\testvir2'
+Installing setuptools, pip, wheel...done.
+
+workon显示虚拟环境列表
+
