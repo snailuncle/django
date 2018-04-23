@@ -3,5 +3,6 @@
 *.mp4
 *.ts
 *.jpg
+*.pyc
 testvir/
 !virtualenv.txt
