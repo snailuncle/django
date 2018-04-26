@@ -15,8 +15,10 @@ import sys
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# 应用包
 sys.path.insert(0,os.path.join(BASE_DIR,'apps'))
-# sys.path.insert(0, os.path.join(BASE_DIR, 'extra_apps'))
+# 第三方包
+sys.path.insert(0, os.path.join(BASE_DIR, 'extra_apps'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
@@ -27,13 +29,15 @@ SECRET_KEY = 'bbe&dwi1b#58#!q19cm-7w!rk1trn4qr#fk-soajy&fb-67#53'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
 ALLOWED_HOSTS = ['*',]
 
 
 # Application definition
-# AUTHENTICATION_BACKENDS={
-#     'users.views.CustomBackend',
-# }
+#用户验证
+AUTHENTICATION_BACKENDS={
+    'users.views.CustomBackend',
+}
 
 
 
@@ -50,6 +54,7 @@ INSTALLED_APPS = [
     'courses',
     'operation',
     'organization',
+    'captcha',
 
 ]
 
@@ -150,11 +155,11 @@ STATICFILES_DIRS=[
 
 
 EMAIL_HOST = "smtp.sina.cn"
-EMAIL_PORT = 465
-EMAIL_HOST_USER = "cmyyq@sina.cn"
-EMAIL_HOST_PASSWORD = ""
+EMAIL_PORT = '25'
+EMAIL_HOST_USER = "123@sina.cn"
+EMAIL_HOST_PASSWORD = "123"
 EMAIL_USE_TLS= False
-EMAIL_FROM = "cmyyq@sina.cn"
+EMAIL_FROM = "123@sina.cn"
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

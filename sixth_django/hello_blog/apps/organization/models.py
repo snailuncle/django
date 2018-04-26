@@ -11,6 +11,9 @@ class CityDict(models.Model):
         verbose_name='城市'
         verbose_name_plural=verbose_name
 
+    def __str__(self):
+        return self.name
+
 
 
 class CourseOrg(models.Model):
@@ -19,13 +22,16 @@ class CourseOrg(models.Model):
     desc=models.TextField(verbose_name='机构描述')
     click_nums=models.IntegerField(default=0,verbose_name='收藏数')
     fav_nums=models.IntegerField(default=0,verbose_name='收藏数')
-    image=models.ImageField(upload_to='org/%Y/%m',verbose_name='封面图',max_length=100)
+    image=models.ImageField(upload_to='org/%Y/%m',verbose_name='logo',max_length=100)
     address=models.CharField(max_length=150,verbose_name='机构地址')
     add_time=models.DateTimeField(default=datetime.now)
 
     class Meta:
         verbose_name='课程机构'
         verbose_name_plural=verbose_name
+
+    def __str__(self):
+        return self.name
 
 
 class Teacher(models.Model):
