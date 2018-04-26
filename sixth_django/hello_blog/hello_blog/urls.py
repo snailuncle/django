@@ -41,5 +41,7 @@ urlpatterns = [
 
     #课程机构首页
     re_path(r'^org_list/$',OrgView.as_view(),name='org_list'),
+
+
     
 ]

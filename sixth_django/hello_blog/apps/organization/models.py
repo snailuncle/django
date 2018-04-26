@@ -18,6 +18,7 @@ class CityDict(models.Model):
 
 class CourseOrg(models.Model):
     city=models.ForeignKey(CityDict,verbose_name='所在城市',on_delete=models.CASCADE)
+    category = models.CharField(default="pxjg", verbose_name=u"机构类别", max_length=20, choices=(("pxjg","培训机构"),("gr","个人"),("gx","高校"))) 
     name=models.CharField(max_length=50,verbose_name='机构名称')
     desc=models.TextField(verbose_name='机构描述')
     click_nums=models.IntegerField(default=0,verbose_name='收藏数')
