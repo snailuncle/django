@@ -67,8 +67,9 @@
 							</li>
 							<li >
 								<a href="teachers-list.html">授课教师</a>
-							</li>
-							<li class="active" ><a href="{% url 'org_list' %}">授课机构</a></li>
+                            </li>
+                                          <!-- 访问url   命名空间是org   该命名空间下的org_list链接-->
+							<li class="active" ><a href="{% url 'org:org_list' %}">授课机构</a></li>
 						</ul>
 					</div>
 				</div>

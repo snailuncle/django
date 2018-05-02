@@ -18,11 +18,12 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import path,re_path,include
 from django.views.generic import TemplateView
+from django.views.static import serve
 from blog.views import getform
 # from users.views import user_login
 from users.views import LoginView,RegisterView,ActiveUserView,ForgetPwdView,ResetView,ModifyPwdView
 from organization.views import OrgView
-                            
+from hello_blog.settings import MEDIA_ROOT                            
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -38,10 +39,11 @@ urlpatterns = [
     re_path(r'^reset/(?P<active_code>.*)/$',ResetView.as_view(),name='reset_pwd'),
     re_path(r'^forget/$',ForgetPwdView.as_view(),name='forget_pwd'),
     re_path(r'^modify_pwd/$',ModifyPwdView.as_view(),name='modify_pwd'),
+    #课程机构url配置
+    re_path(r'^org/', include('organization.urls',namespace='org')),
 
-    #课程机构首页
-    re_path(r'^org_list/$',OrgView.as_view(),name='org_list'),
-
+    #配置上传文件的访问处理函数
+    re_path(r'^media/(?P<path>.*)$',serve,{'document_root':MEDIA_ROOT})
 
     
 ]
